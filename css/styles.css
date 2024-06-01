@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Poppins:wght@400;600&display=swap");
+
+/* Hero CSS */
+
+.hero {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  left: 60px;
+  padding: 200px 60px;
+  margin-right: 20px;
+}
+
+.hero-content h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #ff3147;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-content h2 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 20px;
+  padding: 40px 0;
+}
+
+.hero-content .btn {
+  display: inline-block;
+  background: #ff3147;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 2px;
+  letter-spacing: 1.4px;
+}
+
+.hero-image {
+  left: 80px;
+  padding: 20px;
+  position: relative;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    padding: 50px 20px;
+  }
+  .hero-image {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+  .hero-image {
+    background-size: cover;
+  }
+}
+
+/* Services CSS */
+.services {
+  position: relative;
+  padding: 100px 60px;
+  margin-right: 20px;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  overflow: hidden;
+}
+
+.services h2 {
+  padding-left: 60px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ff3147;
+  opacity: 1;
+}
+
+.services h3 {
+  padding-left: 60px;
+  font-size: 60px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+.services p {
+  padding: 80px 30px;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 1.4;
+  color: #000000;
+  text-align: left;
+  opacity: 1;
+}
+
+/* Gallery CSS */
+.gallery {
+  padding-left: 60px;
+}
+
+.dots-container {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.dot.active {
+  background-color: #ff3147;
+  border: 2px solid #ff3147;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -7.5px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.dot.active::before {
+  border: 2px solid #ff3147;
+}
+
+.image-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
