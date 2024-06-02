@@ -69,14 +69,13 @@
 .services {
   position: relative;
   padding: 100px 60px;
-  margin-right: 20px;
   background: #fafafa 0% 0% no-repeat padding-box;
   overflow: hidden;
 }
 
 .services h2 {
   padding-left: 60px;
-  font-size: 26px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 0px;
   color: #ff3147;
@@ -85,7 +84,7 @@
 
 .services h3 {
   padding-left: 60px;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 600;
   color: #000000;
   text-transform: uppercase;
@@ -161,4 +160,60 @@
 .img-fluid {
   width: 25%;
   height: auto;
+}
+
+/* Detals CSS */
+.details {
+  position: relative;
+  padding: 80px 60px;
+  margin: 0 30px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.details h2 {
+  padding-left: 60px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ff3147;
+  opacity: 1;
+}
+
+.details h3 {
+  padding-left: 60px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 1;
+  margin-bottom: 50px;
+}
+
+.icon img {
+  margin: 20px;
+  width: 72px;
+  height: 72px;
+}
+
+.details-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.details-content p {
+  font-size: 14px;
+  color: #000000;
+} 
+
+/* Project CSS */
+
+.project {
+  position: relative;
+  margin: 60px 60px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  overflow: hidden;
 }
