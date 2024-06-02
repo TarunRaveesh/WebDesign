@@ -4,12 +4,10 @@ $(document).ready(function () {
     var totalDots = Math.ceil(totalImages / imagesPerDot);
     var currentIndex = 0;
     var imageWidth = $('.img-fluid').outerWidth(true);
-    var totalWidth = imageWidth * totalImages;
     var isAutoScrollEnabled = true; // Variable to track auto-scrolling state
 
     // Clone the images for continuous scrolling
     $('.images').append($('.images').children().clone());
-    var totalClonedImages = $('.img-fluid').length;
 
     function showImages(dotIndex) {
         var offset = dotIndex * imagesPerDot;
@@ -56,9 +54,31 @@ $(document).ready(function () {
         }
     }
 
-    setInterval(autoScroll, 3000); // Change image every 4 seconds (4000ms)
+    setInterval(autoScroll, 3000); // Change image every 3 seconds (3000ms)
 
     showImages(currentIndex);
+
+    // Hover and click event handlers with smooth transitions
+    $('.img-fluid').hover(function () {
+        var $this = $(this);
+        $this.data('original-src', $this.attr('src'));
+        $this.fadeOut(100, function () {
+            $this.attr('src', 'images/design.png').fadeIn(400);
+        });
+    }, function () {
+        var $this = $(this);
+        $this.fadeOut(100, function () {
+            $this.attr('src', $this.data('original-src')).fadeIn(400);
+        });
+    });
+
+    $('.img-fluid').click(function () {
+        if ($(this).attr('src') === 'images/design.png') {
+            setTimeout(function () {
+                window.open('https://fylehq.com', '_blank');
+            }, 200); // Delay for smooth transition
+        }
+    });
 
     $('.project-details div').click(function () {
         $('.project-details div').removeClass('active');
@@ -79,5 +99,4 @@ $(document).ready(function () {
             $("body").css("overflow", "auto");
         }
     });
-
 });
