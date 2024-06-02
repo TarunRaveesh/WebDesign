@@ -59,4 +59,11 @@ $(document).ready(function () {
     setInterval(autoScroll, 3000); // Change image every 4 seconds (4000ms)
 
     showImages(currentIndex);
+
+    $('.project-details div').click(function () {
+        $('.project-details div').removeClass('active');
+        $(this).addClass('active');
+        var imgSrc = $(this).data('img');
+        $('#project-img').attr('src', imgSrc);
+    });
 });
