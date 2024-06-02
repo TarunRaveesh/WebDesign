@@ -1,29 +1,62 @@
 $(document).ready(function () {
     var totalImages = $('.img-fluid').length;
-    console.log(totalImages);
+    var imagesPerDot = 4;
+    var totalDots = Math.ceil(totalImages / imagesPerDot);
     var currentIndex = 0;
-    var width = $('.img-fluid').width();
-    console.log(width);
+    var imageWidth = $('.img-fluid').outerWidth(true);
+    var totalWidth = imageWidth * totalImages;
+    var isAutoScrollEnabled = true; // Variable to track auto-scrolling state
 
-    function showImage(index) {
-        $('.images').each(function (i) {
-            var newIndex = (i - index + totalImages) % totalImages;
-            var position = (newIndex * -width) + 'px'; // Shift by one image width
-            $(this).css('transform', 'translateX(' + position + ')');
-        });
+    // Clone the images for continuous scrolling
+    $('.images').append($('.images').children().clone());
+    var totalClonedImages = $('.img-fluid').length;
+
+    function showImages(dotIndex) {
+        var offset = dotIndex * imagesPerDot;
+        var position = (offset * -imageWidth) + 'px';
+        $('.images').css('transition', 'transform 1s ease-in-out');
+        $('.images').css('transform', 'translateX(' + position + ')');
+
+        // Dot management
         $('.dot').removeClass('active');
-        $('.dot').eq(index).addClass('active');
+        $('.dot').eq(dotIndex % totalDots).addClass('active');
+    }
+
+    function resetPositionIfNeeded() {
+        if (currentIndex >= totalDots) {
+            currentIndex = 0;
+            $('.images').css('transition', 'none');
+            $('.images').css('transform', 'translateX(0px)');
+        }
     }
 
     $('.dot').click(function () {
+        isAutoScrollEnabled = false; // Disable auto-scrolling
         var index = $(this).data('index');
-        showImage(index);
+        currentIndex = index;
+        showImages(index);
     });
 
-    setInterval(function () {
-        currentIndex = (currentIndex + 1) % totalImages;
-        showImage(currentIndex);
-    }, 3000); // Change image every 3 seconds (3000ms)
+    $('.image-slider').on('wheel', function (event) {
+        if (event.originalEvent.deltaY > 0) {
+            currentIndex = (currentIndex + 1) % totalDots;
+        } else {
+            currentIndex = (currentIndex - 1 + totalDots) % totalDots;
+        }
+        showImages(currentIndex);
+        event.preventDefault();
+    });
 
-    showImage(currentIndex); // Show initial image
+    function autoScroll() {
+        if (isAutoScrollEnabled) { // Check if auto-scrolling is enabled
+            currentIndex++;
+            showImages(currentIndex);
+
+            setTimeout(resetPositionIfNeeded, 1000); // Wait for transition to complete
+        }
+    }
+
+    setInterval(autoScroll, 3000); // Change image every 4 seconds (4000ms)
+
+    showImages(currentIndex);
 });

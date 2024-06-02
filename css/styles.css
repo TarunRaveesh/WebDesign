@@ -38,7 +38,7 @@
   font-size: 18px;
   line-height: 30px;
   color: #000000;
-  margin-bottom: 20px;
+  margin: 10px 0;
   padding: 40px 0;
 }
 
@@ -61,30 +61,8 @@
 }
 
 .hero-image img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
-}
-
-@media (max-width: 992px) {
-  .hero-content {
-    padding: 50px 20px;
-  }
-  .hero-image {
-    background-size: cover;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content h2 {
-    font-size: 40px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-  }
-  .hero-image {
-    background-size: cover;
-  }
 }
 
 /* Services CSS */
@@ -172,14 +150,15 @@
 
 .images {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.75s ease-in-out;
 }
 
-.col-3 {
-  flex: 0 0 25%;
+.images img {
+  width: calc(25% - 30px);
+  margin-right: 30px;
 }
 
 .img-fluid {
-  width: 100%;
+  width: 25%;
   height: auto;
 }
