@@ -66,4 +66,18 @@ $(document).ready(function () {
         var imgSrc = $(this).data('img');
         $('#project-img').attr('src', imgSrc);
     });
+
+    $("#openForm").click(function (event) {
+        event.preventDefault();
+        $("#popupForm").css("display", "flex");
+        $("body").css("overflow", "hidden");
+    });
+
+    $("#popupForm").click(function (event) {
+        if (event.target == this) {
+            $(this).fadeOut();
+            $("body").css("overflow", "auto");
+        }
+    });
+
 });
