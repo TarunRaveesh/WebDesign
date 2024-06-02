@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600&family=Poppins:wght@400;600&display=swap");
 
 /* Hero CSS */
-
 .hero {
   position: relative;
   width: 100%;
@@ -91,7 +90,8 @@
 }
 
 .services p {
-  padding: 80px 30px;
+  padding: 70px 30px;
+  margin-right: 20px;
   font-size: 18px;
   line-height: 30px;
   letter-spacing: 1.4;
@@ -106,7 +106,7 @@
 }
 
 .dots-container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .dot {
@@ -153,6 +153,7 @@
 .images img {
   width: calc(25% - 30px);
   margin-right: 30px;
+  border-radius: 4px;
 }
 
 .img-fluid {
@@ -208,8 +209,8 @@
 
 /* Project CSS */
 .project {
+  padding: 100px 60px 10px;
   position: relative;
-  margin: 60px;
   background: #ffffff 0% 0% no-repeat padding-box;
   overflow: hidden;
 }
@@ -230,29 +231,192 @@
 
 .project-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 .project-content img {
-  width: 45%;
-  border-radius: 10px;
+  width: 710px;
+  height: auto;
+  border-radius: 4px;
 }
 
 .project-details {
-  width: 45%;
+  text-align: left;
+  width: 350px;
+}
+
+.project-details h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.project-details p {
+  font-size: 13px;
+  color: #000000;
 }
 
 .project-details div {
-  padding: 20px;
-  margin: 10px 0;
+  padding: 42px 30px;
+  margin: 15px 15px;
   cursor: pointer;
-  border-radius: 10px;
-  background: #f2f2f2;
+  border-radius: 4px;
+  background: #f6f6f6;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
 .project-details div:hover,
 .project-details div.active {
   background: #ff4d4d;
   color: white;
+  transform: scale(1.05);
+}
+
+.project-details div:hover h4,
+.project-details div.active h4,
+.project-details div:hover p,
+.project-details div.active p {
+  color: white;
+}
+
+/* Growth CSS */
+.growth {
+  padding: 100px 0;
+  position: relative;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.growth h2 {
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-weight: 600;
+}
+
+.growth h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  color: black;
+  margin-bottom: 60px;
+}
+
+.growth .growth-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.growth-card {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  flex: 1;
+  max-width: 200px;
+  margin: 10px 30px;
+}
+
+.growth-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.growth-card .icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.growth-card h4 {
+  font: normal 400 24px/1.2 Poppins, sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.growth-card p {
+  font: normal normal 300 20px/1.2 Poppins;
+  font-size: 15px;
+  color: #666666;
+}
+
+/* Feedback CSS */
+.feedback {
+  position: relative;
+  padding: 70px 20px 100px;
+  background-color: #ffffff;
+}
+
+.feedback h2 {
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.feedback h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 50px;
+  color: black;
+  margin-bottom: 60px;
+}
+
+.feedback .quote {
+  position: relative;
+  max-width: 1250px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.feedback .quote img {
+  position: relative;
+  left: 40px;
+  top: -20px;
+  width: 55px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.feedback .quote p {
+  position: absolute;
+  font-size: 17px;
+  margin-left: 70px;
+  color: #000000;
+  opacity: 1;
+  text-align: left;
+  z-index: 1;
+}
+
+.feedback .quote p .name {
+  text-align: left;
+  font: normal normal bold 16px Poppins;
+  letter-spacing: 0px;
+  color: #ff3147;
+  opacity: 1;
+}
+
+.feedback .quote p .position {
+  text-align: left;
+  font: normal normal 500 16px Poppins;
+  color: #808080;
+  opacity: 1;
+}
+
+/* Footer CSS */
+.footer {
+  position: relative;
+  text-align: center;
+  background-color: #ff3147;
+}
+
+.footer img {
+  max-width: 70%;
+  display: block;
+  padding: 50px 100px;
 }
