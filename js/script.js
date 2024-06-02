@@ -61,14 +61,16 @@ $(document).ready(function () {
     // Hover and click event handlers with smooth transitions
     $('.img-fluid').hover(function () {
         var $this = $(this);
-        $this.data('original-src', $this.attr('src'));
-        $this.fadeOut(100, function () {
+        if (!$this.data('original-src')) {
+            $this.data('original-src', $this.attr('src'));
+        }
+        $this.stop(true, true).fadeOut(100, function () {
             $this.attr('src', 'images/design.png').fadeIn(400);
         });
     }, function () {
         var $this = $(this);
-        $this.fadeOut(100, function () {
-            $this.attr('src', $this.data('original-src')).fadeIn(400);
+        $this.stop(true, true).fadeOut(100, function () {
+            $this.attr('src', $this.data('original-src')).fadeIn(300);
         });
     });
 
