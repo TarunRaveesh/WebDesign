@@ -64,13 +64,13 @@ $(document).ready(function () {
         if (!$this.data('original-src')) {
             $this.data('original-src', $this.attr('src'));
         }
-        $this.stop(true, true).fadeOut(200, function () {
-            $this.attr('src', 'images/design.png').fadeIn(400);
+        $this.stop(true, true).fadeOut(100, function () {
+            $this.attr('src', 'images/design.png').fadeIn(300);
         });
     }, function () {
         var $this = $(this);
-        $this.stop(true, true).fadeOut(200, function () {
-            $this.attr('src', $this.data('original-src')).fadeIn(400);
+        $this.stop(true, true).fadeOut(100, function () {
+            $this.attr('src', $this.data('original-src')).fadeIn(300);
         });
     });
 
